@@ -1,0 +1,72 @@
+Data Link Layer
+
+
+The Data Link Layer defines rules that determine when a device can send data over a particular medium
+
+The Data Link Layer defines the format of a header and trailer that allows devices attached to 
+the medium to successfully send and receive data.
+
+
+Protocols
+
+
+Ethernet
+
+- Physical Addressing (MAC Addressing)
+
+MAC addresses are made up of 48 bits of characters (12 characters). 
+
+The first 24 are the OUI (Organizational Unique Identifier), eg. Dell's brand. They are hexadecimal digits.
+
+The next 24 are assigned by the vendor (randomized).
+
+
+ARP - Address Resolution Protocol
+
+- Maps IP addresses to MAC addresses
+
+Example - 3 computers are connected to a local area netowork.
+
+** Note - A LAN switch is a network device that cross connects clients, servers, and network devices.
+They're also known as frame switches, and are common in Ethernet networks.
+
+Switches only concern themselves with MAC Adresses.
+
+If Computer 1 is trying to communicate with Computer 3, and the ARP table on Computer 1 is empty 
+(no recognition of any APR IP addresses), it sends an ARP broadcast (a bunch of Fs inside of the MAC
+address for the destination). This broadcast goes through the switch, to Computers 2 and 3.
+
+Computer 2 says nope, not for me.
+
+Computer 3 says it's for me.
+
+So Computer 3 sends it back, along with it's MAC address. Computer 1 adds it to it's ARP table.
+
+
+PPP - Point to Point connections
+
+
+WAP - Wireless Point to Point connections (WiFi)
+
+
+Switches are Layer 2 Devices
+
+
+Remember, IP Addresses are just made up numbers. They are logical addresses.
+
+Network Interface Cards are physical, and provide MAC addresses.
+
+
+Frames
+
+- Encapsulate all data above it
+
+Header
+
+- Source / dest MAC address information is put into a header,
+to determine where it's going to on a LAN network
+
+
+Trailer 
+
+- FCS (Frame Check Sequence) - 4 byte field used to verify that there were no transmission issues

@@ -1,0 +1,118 @@
+Network Layer
+
+
+The Network Layer defines ways for our data to communicate to devices across networks.
+
+
+It does this by using Logical Addressing
+
+- Logical Addressing is routed
+
+- Logical Addressing defines how each device can have an address (IP Address)
+that can be used by the routing process
+
+Example
+
+Every device needs another computer's IP address and subnet mask to connect with it.
+A subnet mask is used to divide an IP address into two parts; one identifies the host computer,
+and the othe rpart identifies the network to which it belongs. The process of defining how logical 
+(IP) addresses are assigned is done by logical addressing.
+
+- A Default Gateway is needed to communicate across networks. A router's Default Gateway is it's 
+gateway to the internet
+
+
+Forwarding (Routing)
+
+- Defines how devices (Routers or Layer 3 Switches) forward packets to their final destination
+
+- Refers to the work done by routing protocols to learn all possible routes and choose the best one
+
+
+Example
+
+When a packet comes in to a router, the router takes the IP information, looks at it's routing table,
+and compares the information it has to the routing table to determine where it is going.
+It then determines the best path to take (best destination in the network to forward the packet to).
+
+A router is a networking device that forwards data packets between computer networks.
+They are usually connected to two or more different networks. When a data packet comes
+to a router port, the router reads address info in the packet to determine which port to send the 
+packet to. Routers use routing tables to determine which interface the packet will be sent. A routing
+table lists all networks for which routes are known. A routing table contains all necessary info
+to forward a packet to the best path towards it's destination, and provides the router with instructions
+for sending the packet to the next hop on it's route accross the network.
+Routers dynamically update their routing tables.
+
+Each entry in a routing table consists of a:
+
+Network ID - the network ID or destination corresponding to the route 
+
+Subnet Mask - the mask that is used to match a destination IP address to the to the Network ID 
+
+Next Hop - the IP address to which the packet is forwarded
+
+Outgoing Interface - the interface that the packet should go to, in order to reach the destination network 
+
+Metric - a common use of the metric is to indicate the minimum number of hops (routers crossed)
+to the network ID
+
+
+Protocols
+
+
+Routed Protocols 
+
+- Uses IP protocol
+
+- Needs an addressing scheme
+
+- IP (IPv4, IPv6) which is used for addressing
+
+- ICMP
+
+ICMP is used for ping, which we use to test direct network connectivity. So, many network monitoring
+tools will use ICMP, eg. monitoring speeds, diagnostics, etc.
+
+
+Routing Protocols 
+
+- Protocols between routers 
+
+- Routing Protocols determine which path is the best to take
+
+- Build routing tables
+
+3 types - Distance Vector, Link State, Hybrid
+
+
+IPSec - IP security
+
+IGMP
+
+
+Devices that operate at this level are routers, or Layer 3 switches
+
+
+Packet
+
+- When we talk about data moving through the network, we say "packet" or "frame".
+
+- At Layer 4, we have segments.
+
+- At Layer 3, we have packets, which is the Layer 3 data encapsulation header.
+It encapsulates all data above it into a data header, and uses source and IP address information
+to know where it's going.
+
+Example
+
+From HTTP, we have data in a data block with source/dest port info in the segment header.
+That entire data block is encapsulated into a new data block, with a new header added to it.
+The new header has source/dest IP information. So, when we're communicating this data thorugh the network, and it 
+gets to the routers, the router looks at the destination and compares it to the routing table.
+And, it knows the best path for the information.
+
+
+
+- At Layer 2, we have frames.
+

@@ -1,0 +1,43 @@
+TCP - Transport Control Protocol
+
+IP - Internet Protocol
+
+
+The TCP/IP Architecture is made up of many protcols at each of the layers.
+
+Uses these protocols to establish connections and transmit our data across the network.
+
+
+Original
+
+Layer 1 - Link
+
+Layer 2 - Internet
+
+Layer 3 - Transport
+
+Layer 4 - Application
+
+
+Updated
+
+Layer 1 - Physical
+
+Layer 2 - Data-Link
+
+Layer 3 - Network
+
+Layer 4 - Transport
+
+Layer 5 - Application
+
+
+So, the Internet Layer was renamed the Netowork Layer, and the Link Layer was split into the
+Physical Layer and the Data Link Layer.
+
+
+The Physical Layer deals with the physical transmission of actual data bits,
+invloving ethernet cables, hardware, network interface cards etc.
+
+The Data-Link Layer deals with the protocols we use to build frames - using MAC Addresses, PPPs,
+frame relays etc.

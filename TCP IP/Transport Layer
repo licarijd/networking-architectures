@@ -1,0 +1,163 @@
+The Transport Layer - Layer 4
+
+
+The Transport Layer defines protocols which provide services related to data
+delivery to another computer, host to host.
+
+It's used to establish communations to other computers on the network.
+
+
+Some Services it provides are:
+
+
+Error Recovery
+
+- The process of noticing when transmitted data was not successfully received, and
+re-requesting the data until it is successfully received.
+
+- It monitors the frames that are coming through the network interface cards on the other end.
+
+Example - two computers whose network interface cards are connected via a cat5 cable (ethernet):
+
+When a frame is being processed at our network interface card, it's then transmitted
+through the all these different bits (0s and 1s) through the wire at Layer 1, to the network interface card
+of the other computer. If the other computer is missing information, it requests that the information
+gets re-sent.
+
+
+Flow Control
+
+- Regulates the amount of data sent by a sending computer to a receiving computer (Windowing)
+
+Sliding windows / Windowing is a method of flow control.
+
+- It manages the rate of data transmission between two nodes to prevent a fast sender
+from overwhelming a slow receiver (this can occur if the receiving computer is receiving more
+icoming traffic, or has less computing power than the sending computer).
+
+- TCP requires that all transmitted data be acknowledged by the receiving host. Sliding windows is
+a method by which multiple packets of data can affirmed with a single acknowledgement.
+
+Example, - installing or downloading something from the internet, with download progress shown via a 
+progress bar. 
+
+This is an example of windowing - a server sends some windows of data, and when it gets an "acknowledged"
+signal that the data has been received, it sends more.
+
+
+Three Way Handshake
+
+A three way handshake is a method used in TCP / IP networks to create a connection between a local
+host / client and server. It is a 3 step method that requires both the client and server to exchange
+SYN and ACK (acknowledgement) packets before actual data communication begins.
+
+The three way handshake provides sequence numbering, and synchronizes 3 steps to establish a connection:
+
+SYN (Synchronize)
+SYN, ACK (Acknowledge)
+ACK (Acknowledge)
+
+Sequence numbering keeps track of information pertaining to the data being sent,
+and helps with error detection.
+
+
+Consider Computer 1 and Computer 2.
+
+
+Example
+
+Computer 1 makes it's first SYN signal to Computer 2.
+
+Computer 2 will reply back with an ACK signal, acknowledging that it got Computer 1's ACK,
+and then sends it's own SYN signal. Then, Computer 1 acknowledges that it got Computer 2's SYN,
+by sending an ACK signal.
+
+
+Example
+
+Computer 2 sends some HTML page data to Computer 1, and sequences the data. The first load of data has
+sequnce number 1; the next load of data has sequence number 2, etc. If Computer 1 receives sequence
+number 1, then 2, then 4, it knows it's missing data because it didn't get anything with sequence
+number 3. TCP sees this, and Computer 1 re-requests everything after 2, since it can only be sure that
+data up to that point is correct.
+
+
+The Transport Layer uses:
+
+
+TCP
+
+- Transmission Control Protocol
+
+- connection oriented, provides reliability
+
+- applications that use HTTP use TCP because it needs a garuntee that the requested data is being received
+
+UDP
+
+- User Datagram Protocol
+
+- connectionless
+
+- no reliability
+
+- less overhead
+
+- often used for audio and video, since performance is more important than receiving every single
+bit of data
+
+- DNS uses UDP since if it doesn't receive an IP address, it'll simply re-request it
+
+
+Devices that concern themselves with Layer 4 on the TCP IP model are hosts and firewalls
+(second genration firewalls maintain knowledge of specific conversations between endpoints
+by remembering which port number the two IP addresses are using at Layer 4, allowing
+examination of the overall exchange between nodes).
+
+
+Segments
+
+- if the transport protocol is TCP, the unit of encapsulated data sent from TCP to the Network Layer
+is called Segment
+
+- information, such as the source and destination ports, or sequence and acknowledgement, numbers
+are included in the header
+
+- TCP and UDP use a source and destination port number to establish connections with another device
+
+- so when we have our application layer information, the Segment (Transport Layer) takes all this data
+and puts it onto a Data Block
+
+- once we have a data block, the segment takes the source and destination port number,
+and puts it into a header
+
+- this header is what allows our communication to know what port to connect to in another computer
+
+
+Example - how the data block headers are used - making an HTTP request
+
+The destination port for an HTTP request is 80, since that's the port required for HTTP
+(websites are simply webservers listening for connections on port 80 or 443)
+
+When the request arrives at the webserver, it will check that the packet is intended for it by
+checking the destination IP from the data block header (this is done by the Network Layer).
+
+When it seen that the destination port is 80, it realizes that it should send the data to the http daemon
+(a computer program that runs as a background process) that's waiting in the background to serve clients.
+
+The source port is used by the sending host to keep track of new incoming conections and
+existing data streams. The source port is provided to the remote machine,
+in order for it to reply to the correct session initiated by the other side.
+
+This is achieved by reversingthe destination and source ports. When the host recieves this packet,
+it will identify it as a reply to the previous packet it sent, since it notices the reversed ports.
+
+The source port (on the local host) could be anything over 1024 (source ports are randomly generated
+from the unregistered port range). They basically keep track of connections (each connection has
+it's own port).
+
+
+
+
+
+

@@ -1,0 +1,144 @@
+Network Architecture Models
+
+- stacked layers, which provide the devices on the network with a blueprint or set of instructions
+for communicating data across the network successfully.
+
+- each layer has a specific purpose to make the transmission of data across networks possible.
+
+- each layer uses specific protocols and standards.
+
+
+Examples
+
+One layer is used for application protocols and standards.
+
+Another for determining the connection type and port to be used.
+
+And another layer determines the logical addressing and physical addressing information
+required to send the data across the networks.
+
+
+We don't concern ourselves with the programming or configuration of the network models;
+they are standards that just exist.
+
+Our computers use their application APIs and frameworks to determine what's needed.
+
+We only worry about understanding the models and each of their associated layers.
+
+To understand the transmission of our data across our networks, and understand the data encapsulation,
+we learn each layer of the architecture model so we know which protocols and standards are being used
+at which stage of the different communication processes.
+
+
+Network Architecture Models - 2 Types
+
+OSI - old model
+
+TCP/IP - current
+
+
+OSI Model layers
+
+Layer 1 - Physical
+
+Layer 2 - Data Link
+
+Layer 3 - Network
+
+Layer 4 - Transport
+
+Layer 5 - Session
+
+Layer 6 - Presentation
+
+Layer 7 - Application
+
+
+Old TCP/IP Model Layers
+
+Layer 1 - Link
+
+Layer 2 - Internet
+
+Layer 3 - Transport
+
+Layer 4 - Application
+
+
+New TCP/IP Model Layers
+
+Layer 1 - Physical
+
+Layer 2 - Data Link
+
+Layer 3 - Network
+
+Layer 4 - Transport
+
+Layer 5 - Application
+
+
+Although the TCP/IP Model is the one we use today, we still need to learn about the OSI Model
+since it's easier to understand. Now a days, we still use it as a reference.
+
+
+When we discuss architecture models and data encapsulation, we typically talk about them from the top layer
+moving down, since each layer required a service from another layer above it.
+
+For these layers to perform their job, they use two different methods.
+
+
+Method 1 - Same Layer Interaction (between different computers)
+
+Two computers use the same protocol to communicate with the same layer of the architecture model
+on another computer.
+
+For example, Layer 4 uses the TCP or UDP protocols to establish a connection to another network device,
+which is also going to be using TCP or UDP for Layer 4.
+Using Same Layer Interaction is expecially importent with TCP especially when it
+requires a 3 way handshake.
+
+Another example is when an application layer program on Machine 1 wants to communicate with
+the same layer on Machine 2. An HTTP header is added on the sending side, so the receiving side
+can process the HTTP header information.
+
+
+Method 2 - Adjacent-Layer Interaction (on the same computer)
+
+On a single computer, one layer provides a service to a higher layer. That layer requests that the next
+lower layer perform a needed function. So, a layer serves the layer above it, and is served by the
+layer below it.
+
+For example, at the top layer (Layer 7, the Application Layer),
+we're trying to access an HTTP server (type 'google.com', which goes to a Domain Name Server [DNS],
+which resolves the IP address we needed).
+
+Most HTTP traffic travels over TCP. When a URL is typed into the browser, the browser opens a
+TCP socket by specifying the server address and port (which is acquired via DNS from the
+Application Layer), and then starts writing data into the socket. The Transport Layer protocol
+(eg. TCP) provides error recovery and flow control to the Application Layer.
+
+A socket is one endpoint of a two-way communication link between programs running on the network. A
+socket is bound to a port number so that the TCP layer can identify the application that data
+should be sent to.
+
+In other words, HTTP specifications don't say anything about how the messages actually cross the network and reach
+the server - that's the job of lower level protocols. A message from a web browser has to travel down a series of layers,
+and when in arrives at the web server (Layer 1), it travels up through a series of layers to reach the web server process.
+
+All the browser needs to worry about is writing the proper HTTP message into the socket.
+The TCP layer accepts the data, and ensures the data gets delivered to the server without getting
+lost or duplicated. It also automatically resends any data that gets lost in transit.
+
+The Transport Layer protocol UDP used the Internet (Network) Layer protocol IP to 
+perform IP addressing and routing services.
+
+The Internet protocol IP uses the Link layer protocol Ethernet to perform the host to
+host physical communication service it needed.
+
+The Link Layer provides a physical connection and or link service to the Internet Layer above it.
+
+
+
+
+

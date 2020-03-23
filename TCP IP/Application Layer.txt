@@ -1,0 +1,44 @@
+The Application Layer - Layer 5
+
+- Provides an interface between applications on different computers.
+
+- Usually, one application is a web browser, and the other is a web server,
+like IIS or Apache.
+
+- Application Layer is considered to be for our communication protocols.
+
+
+Protocols:
+
+- BGP
+
+- HTTP
+
+- DNS
+
+- FTP
+
+- TFTP
+
+- TELNET
+
+- SSH
+
+- LDAP
+
+- SMTP
+
+Others: POP3, NTP, RTP, SNMP, IMAP, SIP, RIP, STSP, XMPP
+
+
+Example
+
+Browsers resolve a host IP address using DNS. A domain name resolves to an IP address.
+
+Once the IP address information is sent back, a connection needs to be established with the
+webserver so that resources such as HTML and images can be retrieved over the network.
+The HTTP Protocol is used to establish the connection.
+
+POP3 and IMAP are used for email communication.
+
+To remotely administer a device, Telnet or SSH can be used.
