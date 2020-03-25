@@ -70,3 +70,44 @@ to determine where it's going to on a LAN network
 Trailer 
 
 - FCS (Frame Check Sequence) - 4 byte field used to verify that there were no transmission issues
+
+
+Example - Layer 5 (Application Layer) to Layer 2 (Data-Link Layer)
+
+Application Layer
+
+- HTTP Data encapsulated into a data block
+
+- next, we need port information
+
+Transport Layer
+
+- All Layer 5 data gets added to a new data block
+
+- Destination Port (80), and Source Port ( > 1024) is put into a header. This header
+is added to all the data from Layer 5
+
+- next, we need logical address information
+
+Network Layer
+
+- All Layer 4 data gets added to a new data block
+
+- Source and Destination IP address information is put into a header. This header is added to
+all the data from Layer 4
+
+- Next, we need physical address information
+
+Data-Link Layer 
+
+- All Layer 3 data gets added to a new data block
+
+- Physical Address information (MAC address) for the source and destination get added to a 
+frame header. This header is added to all the data from Layer 3
+
+- The trailer (FCS) also gets added
+
+
+When the frame gets to a router, and needs to get to a new network, it's not concerned with the 
+physical addressing information, only the logical addressing information. So, it will remove
+the header added in Layer 2, and then rebuild it when it sends the frame out.

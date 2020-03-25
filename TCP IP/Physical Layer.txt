@@ -1,0 +1,52 @@
+Physical Layer
+
+
+The Physical Layer deals with standards from organizations that deal with the physical
+characteristics for transmitting data. the Physical Layer sends bits of data (binary data).
+
+Examples
+
+- NIC (Network Interface Cards)
+
+- Ethernet
+
+- Hub (a device which forwards data)
+
+- repeater
+
+
+When a network device (Layer 1) receives the bits of data (binary data), 
+it will go up to Layer 2 to get physical addressing (MAC addressing) information
+for source and destination.
+
+Then it will go to Layer 3 to get virtual addressing (IP addressing) information
+for source and destination.
+
+Then it will go to Layer 4 to get port information
+for source and destination.
+
+Lastly, it will go to Layer 5 to determine which application will be needed.
+
+
+Benefits of the OSI Model, and networking models in general:
+
+- Less complex than not using a layered model
+
+- Network models breaks the concepts into smaller, logically distinct parts
+
+- They provide standard interfaces
+
+- The standard interface definitions between each layer allow multiple vendors to create products
+that fill a particular role, with the benefits of open competition
+
+- Easier program changes and faster product development due to reduced complexity
+
+- Creating products to meet the same networking standards means that computers and 
+networking gear from multiple vendors can work in the same network
+
+- Modular engineering
+
+- One vendor can write software that implements higher layers (eg, a web browser),
+while another vendor can write software that implements lower layers
+(eg. Microsoft's built in TCP/IP software in Windows)
+

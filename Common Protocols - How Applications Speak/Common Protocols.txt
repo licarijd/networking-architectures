@@ -1,0 +1,57 @@
+Common Protocols
+
+
+File Transfer Protocol 
+
+Application Protocol: FTP
+
+Transport Protocol: TCP
+
+Port: 20/21
+
+
+Secure Socket Shell 
+
+Application Protocol: SSH
+
+Transport Protocol: TCP
+
+Port: 22
+
+
+Domain Name System
+
+Application Protocol: DNS
+
+Transport Protocol: UDP/TCP
+
+Port: 53
+
+
+Hypertext Transfer Protocol
+
+Application Protocol: HTTP
+
+Transport Protocol: TCP
+
+Port: 80
+
+
+Secure Sockets Layer
+
+Application Protocol: SSL
+
+Transport Protocol: TCP
+
+Port: 443
+
+
+Known Port Numbers: 1-1024 
+
+- these can't be used
+
+
+Registered Open Ports: 1025 - 65535
+
+- these can be dynamically allocated
+
