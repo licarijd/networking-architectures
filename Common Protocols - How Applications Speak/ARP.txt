@@ -1,15 +1,22 @@
 Address Resolution Protocol
 
 
-ARP is used to map IP addresses to MAC addresses, and stores the information in an ARP Table
+ARP is used to map IP addresses to MAC addresses, and stores the information in an ARP Table.
 
 Computers and routers have ARP Tables. The devices will look at their ARP Table when they 
 need to send information across the networks, so it can learn the Layer 3 addressing (logical)
 and Layer 2 addressing (physical) assiciated to it.
 
+Computers compare the information on the ARP tables to determine where to forward data.
+
+Routers compare the information in their ARP tables and compare it to their routing tables to 
+determine where to forward the packets.
+
 ARP Broadcasts are used to find devices on a network that are not listed in the ARP Table.
 The broadcasts go out to every Computer except the one sending the request.
-The Broadcast Address is always FFFF.FFFF.FFFF.
+The Broadcast Address is always FFFF.FFFF.FFFF. When the device with the IP address of the packet 
+receives the broadcast, it sends back it's MAC address so that the sender can update it's 
+routing table. 
 
 Routers (Layer 3 devices) are the only devices on networks that seprate broadcast domains.
 Routers use IP addresses to communicate packets across networks.

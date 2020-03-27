@@ -1,0 +1,26 @@
+Hypertext Transfer Protocol (HTTP)
+
+
+HTTP is a protocol which is used to transfer information between web clients and web servers
+(Layer 7)
+
+HTTP uses port 80.
+
+HTTPS uses port 443.
+
+Both HTTP and HTTPS use the TCP protocol to connect to servers.
+
+Invlolves a 3-way handshake.
+
+
+Example
+
+Client (browser) types in a domain name (a packet is constructed and sent to the DNS).
+
+The DNS responds with an IP address.
+
+The client builds a TCP connection, and requests an HTTP connection from the server (SYN).
+
+The server responds with a SYN-ACK to acknowledge the connection.
+
+Finally, the client responds with an ACK to acknowledge the HTTP connection.

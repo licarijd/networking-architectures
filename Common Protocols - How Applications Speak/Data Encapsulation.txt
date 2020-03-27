@@ -1,0 +1,35 @@
+Data Encapsulation at Various Layers
+
+
+Layer 4
+
+- Has Segments
+
+- Segments have a header with port information, and data (HTTP data block)
+
+- Routers are Layer 4 devices
+
+
+Layer 3
+
+- Has Packets
+
+- Packets have a header with IP (logical) address information, and data (including data from Layer 4)
+
+- Switches are Layer 3 devices
+
+
+Layer 2
+
+- Has Frames
+
+- Frames have a header with Mac (Physical) address information, data (including data from Layer 3),
+ and a trailer with FCS information
+
+- FCS (Frame Check Sequence) is a 4 byte field used to verify that there were no transmission issues
+
+
+** In every step of the Data Encapsulation process, the source and destination will need to be flipped.
+For example, a web server receiving data will have to change the source to itself, and the destination to 
+the sender.
+

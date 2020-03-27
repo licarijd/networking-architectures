@@ -1,0 +1,33 @@
+Domain Name System
+
+
+DNS is a means for a device to translate a naming system into its assiciated IP Adress.
+
+It's used to resolve domain names to the webserver IP Address it is trying to communicate with.
+
+DNS uses TCP or UDP (normally UDP).
+
+It uses port 53.
+
+In the case of load balancing, the IP address for a domain might change (since there are multiple servers).
+
+
+How DNS Works:
+
+Every device on a network requries an IP address to communicate across a network.
+
+Your computer will take the domain name, and forward it to the DNS server.
+
+The DNS server compares the address its associated to, and forwards the packet to that address.
+
+
+Example
+
+Computer 1 wants to send data to a webserver.
+
+It forwards it's segment (with source and destination port numbers) to the webserver's port
+53 (DNS). The DNS then sends the IP address of the webserver back to computer 1
+(so source and destination IP addresses flip). Computer 1 builds a packet (TCP connection), with 
+IP address information (TCP). The source port changes to computer 1s source port, 
+and the destination port becomes 80 (the port for HTTP). It sends to the webserver,
+and the webserver responds with an HTTP connection.
