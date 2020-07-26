@@ -42,3 +42,107 @@ The HTTP Protocol is used to establish the connection.
 POP3 and IMAP are used for email communication.
 
 To remotely administer a device, Telnet or SSH can be used.
+
+
+HTTP (HyperText Transfer Protocol)
+
+- client-server protocol used for all web communications and transactions 
+
+- consists of two phases: request and response 
+
+- each request/response has a header with info about the data, and a body with data 
+
+
+HTTP Requests
+
+General Form: 
+
+- request line: HTTP method, Requested URI, HTTP version 
+
+- Header fields 
+
+- Blank line 
+
+- Message Body 
+
+Example:        GET / storefront.html HTTP/1.1
+
+- Get is the method 
+
+- storefront.html is the requested URI 
+
+- HTTP/1.1 is the version
+
+
+Request Methods 
+
+
+GET 
+
+- requests data from a specified resource 
+
+
+POST 
+
+- sends data to the server to create/update a resource 
+
+
+PUT 
+
+- sends data to a server and overwrites whatever is at the URL 
+
+
+HEAD 
+
+- identical to GET, but without the resource body (headers only)
+
+- can be used for chcking before downnloading a file 
+
+
+DELETE 
+
+- deletes the specified resource from the server 
+
+
+OPTIONS 
+
+- describes the communication options for the targetted resource 
+
+
+PUT 
+
+- is idempotent, unlik POST 
+
+- the side effects on multiple identical requests is the same as it would be for a single request 
+
+
+GET vs POST 
+
+
+GET 
+
+- can be cached, remains in the browser history, can be bookmarked 
+
+- should never be used when dealing with sensitive data 
+
+- data is visible to everyone in the URL 
+
+- has length restrictions: 2048 characters, and only ASCII characters are allowed
+
+- it is only used to request data, not to modify data 
+
+
+POST 
+
+- never cached 
+
+- does not remain in the browser history 
+
+- can't be bookmarked 
+
+- no restrictions on length and content of characters 
+
+- safer than GET, since data is not displayed in the URL
+
+
+** List of HTTP status codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status

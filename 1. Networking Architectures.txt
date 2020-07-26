@@ -139,6 +139,9 @@ host physical communication service it needed.
 The Link Layer provides a physical connection and or link service to the Internet Layer above it.
 
 
+** In a URL, the port number specifies the process on the server. For example, the default for http is 80.
+
+
 
 
 
